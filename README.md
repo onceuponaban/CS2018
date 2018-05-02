@@ -54,3 +54,17 @@ Il y a 3 étapes, qui s'appelle entre elles, lors d'un build :
 - `dotnet run` : exécuter le projet, s'il est exécutable :
   - Executer dans la console, pour un projet console
   - Lancer un serveur web, pour un projet web.
+
+### Initial commit ###
+
+Créer un projet sur Github ou Gitlab.  
+Depuis la racine du projet:  
+`git init`  
+Trouver un .gitignore pour un projet .net Core : https://github.com/dotnet/core/blob/master/.gitignore  
+Créer un fichier .gitignore :  
+`touch .gitignore`  
+Remplir ce fichier avec le contenu exemple.  
+`git add .`  
+`git commit -m "Initial commit, project structure"`  
+`git remote add origin https://github.com/onceuponaban/CS2018.git`  
+`git push origin master`
