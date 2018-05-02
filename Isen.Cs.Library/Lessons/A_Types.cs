@@ -47,13 +47,44 @@ namespace Isen.Cs.Library.Lessons
             Boolean bFalse = !bTrue;
 
             // sbyte : entier signé
-            sbyte byteB = 0xB;
-            SByte minusByteB = -0xB;
+            sbyte byteB = 0b101_1110;
+            SByte minusByteB = -0xF;
+            Console.WriteLine($"sbytes : {byteB} = {(int)byteB}");
+            Console.WriteLine($"sbytes : {minusByteB} = {(int)minusByteB}");
             // Byte : non signé
-            byte byteBB = 0xAB;
-            Byte byteBB2 = 0xAC;
+            byte byteBB = 0xFF;
+            Byte byteBB2 = 0b1111_1111;
+            Console.WriteLine($"sbytes : {byteBB} = {(int)byteBB}");
 
-            
+
+            // Char
+            char letterC = 'c';
+            Console.WriteLine($"Le code ASCII de {letterC} est {(int)letterC}");
+            int ascii80 = 80;
+            Console.WriteLine($"Le code ASCII de {(char)ascii80} est {ascii80}");
+
+            // object <=> System.Object
+            string str2 = "Hello"; // string <=> System.String
+            object oStr2 = (object)str2;
+            Console.WriteLine($"typeof(oStr2) = {oStr2.GetType()}"); // typeof(oStr2) = System.String
+            // is pour tester si une variable est d'un certain type
+            Console.WriteLine($"is oStr2 a string ? {oStr2 is string}"); // true
+            Console.WriteLine($"is oStr2 an object ? {oStr2 is object}"); // true
+            Console.WriteLine($"is oStr2 an int ? {oStr2 is int}"); // false
+
+            // Casts
+            int myInt = 42;
+            object objMyInt = (object)myInt;
+            // Compile error
+            // string castInttoString = (string)myInt;
+            // runtime error car cast impossible
+            // string castIntToString = (string)objMyInt;
+            // Cast => null
+            string castIntToString = objMyInt as string; // castIntToString == null;
+            Console.WriteLine($"castIntToString is null ? {castIntToString == null}"); // true
+            // Convertir
+            string intDisplayedAsString = myInt.ToString();
+            Console.WriteLine(intDisplayedAsString);
         }
     }
 }
